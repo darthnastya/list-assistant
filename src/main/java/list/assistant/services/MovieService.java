@@ -49,7 +49,7 @@ public class MovieService {
             Optional<Person> personOptional = personService.getByName(personName);
             Person person;
 
-            if (personOptional.isEmpty()) {
+            if (!personOptional.isPresent()) {
                 person = Person.builder().name(personName).build();
             } else {
                 person = personOptional.get();
