@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+  postgres:
+    image: "postgres:9.6"
+    restart: always
+    ports:
+      - "5432:5432"
+    tmpfs:
+      - /var/lib/postgresql/data:rw
+    environment:
+      - POSTGRES_DB=list_assistant
+      - POSTGRES_USER=test
+      - POSTGRES_PASSWORD=passw0rd
