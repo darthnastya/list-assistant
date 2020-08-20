@@ -30,6 +30,13 @@ public class MovieController {
     @Autowired
     private XLSXService xlsxService;
 
+    @ApiOperation(value = "start")
+    @GetMapping("/")
+    public String start() {
+        return "Server was started";
+    }
+
+
     @ApiOperation(value = "Currently available movies")
     @GetMapping("/movies")
     public List<MovieDTO> getMovies() {
@@ -48,7 +55,6 @@ public class MovieController {
 
         return personService.getPersonsStatistic();
     }
-
 
     @ApiOperation(value = "Add new name")
     @PostMapping("/movies/new")
